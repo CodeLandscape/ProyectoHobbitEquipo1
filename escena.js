@@ -1,30 +1,39 @@
-export class Escena{
+/**
+ * Clase para gestionar las escenas en una aplicación o juego.
+ */
+export class Escena {
 
-    #localizacion = null
-    #dialogo = null
-    #fondo = null
+    /**
+     * Crea una instancia de la clase Escena.
+     * @param {string | null} localizacion - La localización de la escena.
+     * @param {string | null} dialogo - El diálogo de la escena.
+     * @param {string | null} fondo - La imagen de fondo de la escena.
+     */
+    constructor(localizacion = null, dialogo = null, fondo = null) {
+        /**
+         * La localización de la escena.
+         * @type {string | null}
+         */
+        this.localizacion = localizacion;
 
-    constructor(localizacion=null, dialogo=null, fondo=null)
-    {
-        this.#localizacion = localizacion
-        this.#dialogo= dialogo
-        this.#fondo= fondo
+        /**
+         * El diálogo de la escena.
+         * @type {string | null}
+         */
+        this.dialogo = dialogo;
+
+        /**
+         * La imagen de fondo de la escena.
+         * @type {string | null}
+         */
+        this.fondo = fondo;
     }
 
-    iniciarEscena()       
-    {
-        /*
-        imagen = document.createElement("img");
-        imagen.src = "imagenes/esc2.png";*/
-
-        document.body.style.backgroundImage = `url(${this.#fondo})`;
-
-        // document.getElementById("dialog-text").innerHTML += imagenfondo.outerHTML;
-        document.getElementById("dialog-text").innerHTML=this.#dialogo
-
-        //cambiar imagen de fondo?
-        // imagen = document.body;
-        // imagen.style.backgroundImage = fondo;
+    /**
+     * Inicia la escena estableciendo la imagen de fondo y el texto del diálogo.
+     */
+    iniciarEscena() {
+        document.body.style.backgroundImage = `url(${this.fondo})`;
+        document.getElementById("dialog-text").innerHTML = this.dialogo;
     }
-
 }

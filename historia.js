@@ -91,10 +91,6 @@ function acabarPartida(){
 function dañoGigante(){
     const daño = Math.floor(Math.random() * 6) + 2;
     Protagonista.conteoVidas(daño);
-    // bilbo.recibirFijo(daño) // restar vida a bilbo según el daño generado
-  
-    /*let textoV2 = `<b style="${colorRed}"><br>Bilbo ha recibido ${daño} de daño. Vida actual: ${bilbo.vida}</b><br>`
-    document.getElementById("dialog-text").innerHTML += textoV2*/
   }
 
 function historia() {
@@ -290,7 +286,6 @@ function parteFinal(){
                 // pierdes 1 vida
                 escena62.iniciarEscena();
                 Protagonista.conteoVidas(-1);
-                // bilbo.restarVida();
                 gollum.hablar("¡WRAAAAA! ¡NO, NO, NO! ¡YO PREGUNTAR OTRA VEZ! ¡ UNA MÁS, UNA MÁS!")
                 gollum.hablar("Devorar todas las cosas. Las aves, bestias, plantas y flores. Roer el hierro, morder el acero. Pulverizar la peña compacta. Matar reyes, arruinar ciudades y derriba las altas montañas. ¿Qué ser? <br><br> <b>Opción A: El tiempo. Opción B: La enfermedad.")
                 bilbo.comprobarDerrota(botonderecha, botonizquierda, botonReset)
